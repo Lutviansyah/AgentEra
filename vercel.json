@@ -1,5 +1,5 @@
 {
-  "installCommand": "npm install --force",
-  "buildCommand": "npm run build",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm build",
   "framework": "nextjs"
 }
