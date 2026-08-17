@@ -23,6 +23,8 @@ export async function POST(req: NextRequest) {
       ok: true,
       walletAddress: grant.walletAddress,
       keyId: grant.keyId,
+      publicKey: grant.publicKey,
+      session: grant.session,
       network: grant.network,
       expiry: grant.session.expiry,
       transactionHash: grant.transactionHash,

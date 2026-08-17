@@ -5,6 +5,8 @@ type GrantResp = {
   ok?: boolean
   walletAddress?: string
   keyId?: string
+  publicKey?: string
+  session?: any
   transactionHash?: string
   network?: string
   expiry?: number
@@ -36,13 +38,13 @@ export default function AltanaHirePanel({ agentId, price }: { agentId: string; p
   }
 
   async function revoke() {
-    if (!resp?.keyId) return
+    if (!resp?.publicKey && !resp?.session) return
     setLoading(true)
     try {
       const r = await fetch('/api/altana/revoke', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ keyId: resp.keyId }),
+        body: JSON.stringify(resp.session ? { session: resp.session } : { publicKey: resp.publicKey }),
       })
       const j = await r.json()
       if (j.ok) setRevoked(true)
@@ -63,7 +65,7 @@ export default function AltanaHirePanel({ agentId, price }: { agentId: string; p
         <button onClick={hire} disabled={loading} className="bg-[#181A1E] text-white px-5 py-2 rounded-full text-sm disabled:opacity-50">
           {loading ? 'Granting…' : 'Hire — grant session (onchain)'}
         </button>
-        {resp?.keyId && !revoked && (
+        {(resp?.publicKey || resp?.session) && !revoked && (
           <button onClick={revoke} disabled={loading} className="border px-5 py-2 rounded-full text-sm disabled:opacity-50">
             Revoke session
           </button>
@@ -79,6 +81,7 @@ export default function AltanaHirePanel({ agentId, price }: { agentId: string; p
             <>
               <div>Wallet <b>{resp.walletAddress}</b> ({resp.network})</div>
               <div>KeyId {resp.keyId}</div>
+              {resp.publicKey && <div>PubKey {resp.publicKey.slice(0,18)}…{resp.publicKey.slice(-8)}</div>}
               {resp.transactionHash && <div>Grant tx {resp.transactionHash}</div>}
               {resp.expiry && <div>Expiry {new Date(resp.expiry * 1000).toLocaleString()} (Unix {resp.expiry})</div>}
               {resp.links && (

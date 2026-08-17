@@ -183,6 +183,7 @@ export type GrantResult = {
   session: GrantSessionResult
   walletAddress: Address
   keyId: Hex
+  publicKey: Hex
   explorerAccountUrl: string
   explorerKeyUrl: string
   transactionHash?: Hex
@@ -238,6 +239,7 @@ export async function grantHireSession(opts?: {
     session: result,
     walletAddress: wallet.address,
     keyId,
+    publicKey: result.publicKey as Hex,
     explorerAccountUrl: accountExplorerUrl(wallet.address),
     explorerKeyUrl: keyExplorerUrl(keyId),
     transactionHash: result.transactionHash,

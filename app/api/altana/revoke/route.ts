@@ -15,9 +15,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'ALTANA_PRIVATE_KEY missing' }, { status: 500 })
     }
     const wallet = await getOrCreateAgentWallet()
-    const target: any = session || keyId || publicKey
+    // Prefer session object or publicKey (33/64/65 bytes). keyId (32-byte keccak) is NOT valid for revokeSession.
+    const target: any = session || publicKey || keyId
+    if (keyId && !publicKey && !session) {
+      return NextResponse.json({ ok: false, error: 'keyId (32 bytes) cannot be revoked directly — send publicKey (from grant response) or full session object. Example: { publicKey: "0x..." }' }, { status: 400 })
+    }
     const res: any = await revokeHireSession(target, wallet)
-    const idForLink = keyId || publicKey || session?.publicKey || ''
+    const idForLink = (session?.publicKey as string) || (publicKey as string) || (keyId as string) || ''
     return NextResponse.json({
       ok: true,
       status: res.status,

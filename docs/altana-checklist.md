@@ -166,3 +166,6 @@ open https://testnet.altana.network/key/0xKEY_FROM_STEP3
 ---
 
 Tested: `npx tsc --noEmit --target ES2020` passes, deps installed (`@altananetwork/sdk 0.7.1 + viem 2.55.17`). Not yet executed on testnet — requires funding Step 1 above and a live run of Steps 2-5 (estimated 5 min once faucet arrives).
+
+
+**Submitter wallet for Altana track:** `0x34C002E40fD499156340c385f3D1f19011b29942` (include in Google Form Additional Notes + ensure linked to explorer URLs after session grant)
