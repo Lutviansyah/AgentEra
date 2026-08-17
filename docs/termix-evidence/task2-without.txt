@@ -1,0 +1,8 @@
+RUN_ID=termix-20260818T03-task2-without
+START=2026-08-18T03:40:00Z END=2026-08-18T03:54:40Z ELAPSED=880s
+WALLET=0xTest00000000000000000000000000000000BEEF  CHAIN=bsc
+METHOD=BscScan Token Approvals + manual eth_call allowance x12 (Read Contract tab)
+FOUND=8  MISSED=4 (2 unlimited on page 2: BUSD spender 0x... , 2 high-risk small tokens CAKE/BSW)
+REVOKES_ENCODED=2 (manually encoded approve(spender,0) for USDT+ BUSD, gave up after 10 min)
+SCREENSHOTS=task2-without-01.png (BscScan page1), task2-without-02.png (page2 missed), task2-without-allowance.png (eth_call)
+NOTES=Manual classification required copying allowance values into spreadsheet. No risk_score or calldata auto-generated.

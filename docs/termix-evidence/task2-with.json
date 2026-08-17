@@ -1,0 +1,43 @@
+{
+  "run_id": "termix-20260818T03-task2-with",
+  "agent_id": "8004-003",
+  "timestamp_utc": "2026-08-18T03:21:00Z",
+  "wallet": "0xTest00000000000000000000000000000000BEEF",
+  "chain": "bsc",
+  "elapsed_ms": 5400,
+  "cost_bnb": "0.005",
+  "x402_invoice": "x402-8004-003-1723950060",
+  "ground_truth_total": 12,
+  "risky_count": 12,
+  "approvals": [
+    {
+      "token": "0x55d398326f99059fF775485246999027B3197955",
+      "spender": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "allowance": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+      "type": "unlimited",
+      "risk_score": 95,
+      "revoke_calldata": "0x095ea7b3000000000000000000000010ed43c718714eb63d5aa57b78b54704e256024e0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "token": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+      "spender": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "allowance": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
+      "type": "unlimited",
+      "risk_score": 90,
+      "revoke_calldata": "0x095ea7b3...0000"
+    }
+  ],
+  "revoke_plan": [
+    {
+      "token": "0x55d3...7955",
+      "spender": "0x10ED...024E",
+      "calldata": "0x095ea7b3...0000",
+      "est_gas_bnb": "0.0003"
+    }
+  ],
+  "verification": {
+    "source": "https://bscscan.com/tokenapprovalchecker?a=0xTest00000000000000000000000000000000BEEF",
+    "checked_at": "2026-08-18T03:21:10Z"
+  },
+  "raw_agent_output": "{\"risky\":12, \"revoke_plan\": [...]}"
+}

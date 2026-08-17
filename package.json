@@ -8,17 +8,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "@altananetwork/sdk": "^0.7.1",
     "next": "14.2.5",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "viem": "^2.55.17"
   },
   "devDependencies": {
-    "typescript": "5.5",
     "@types/node": "20.14",
     "@types/react": "18.3",
     "autoprefixer": "10.4",
     "postcss": "8.4",
-    "tailwindcss": "3.4"
+    "tailwindcss": "3.4",
+    "typescript": "5.5"
   },
   "engines": {
     "node": "24.x"

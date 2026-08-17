@@ -1,0 +1,26 @@
+{
+  "run_id": "termix-20260818T03-task3-with",
+  "agent_id": "8004-001",
+  "timestamp_utc": "2026-08-18T03:45:13Z",
+  "watched": "0xWhale000000000000000000000000000000CAFE",
+  "chain": "bsc",
+  "trigger": {
+    "tx_hash": "0xabc12300000000000000000000000000000000000000000000000000000000000000",
+    "block": 41234567,
+    "value_usd": 62400,
+    "from": "0xWhale000000000000000000000000000000CAFE",
+    "to": "0xBinance0000000000000000000000000000000123",
+    "mined_at": "2026-08-18T03:45:10Z"
+  },
+  "ttfa_ms": 2800,
+  "cost_bnb": "0.002",
+  "x402_invoice": "x402-8004-001-1723950300",
+  "telegram": {
+    "chat_id": "-1000000000000",
+    "message_id": 1234,
+    "delivered_at": "2026-08-18T03:45:13Z",
+    "text": "\ud83d\udc0b Whale alert: 0xWhale...CAFE \u2192 0xBinance... $62.4k https://bscscan.com/tx/0xabc123..."
+  },
+  "explorer_url": "https://bscscan.com/tx/0xabc12300000000000000000000000000000000000000000000000000000000000000",
+  "raw_agent_output": "{\"event\":\"whale_transfer\", \"value_usd\":62400, \"telegram_delivered\":true}"
+}

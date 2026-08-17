@@ -1,0 +1,7 @@
+RUN_ID=termix-20260818T03-task3-without
+WATCHED=0xWhale000000000000000000000000000000CAFE  THRESHOLD=$50k
+START_POLL=2026-08-18T03:40:00Z  TX_MINED=2026-08-18T03:45:10Z  DETECTED=2026-08-18T04:13:22Z  TTFA=1692s (28m12s)
+METHOD=manual BscScan address page refresh every ~30s + Venus dashboard check
+RESULT=detected 28m late, missed real-time window, value not captured at alert time (had to open tx afterwards)
+SCREEN_RECORDING=task3-without.mp4 (30 min truncated)
+NOTES=Human left tab after 12 min to check other tasks, missed 2 intermediate blocks. No Telegram push — pure polling.

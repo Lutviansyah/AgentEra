@@ -1,0 +1,9 @@
+RUN_ID=termix-20260818T03-task1-without
+START=2026-08-18T03:30:00Z  END=2026-08-18T03:38:12Z  ELAPSED=492s
+METHOD=manual Pancake UI + BscScan + curl Pancake API (5 pools)
+POOLS_CHECKED=5
+BEST_FOUND=WBNB/BUSD 0x4e9965b32ac7704fbeb5e6c19e35f5d41777f83f  fee 500  TVL $1.4M  APY 6.5%  source https://api.pancakeswap.info/api/v3/pools?chain=bsc
+MISSED_HIGHER_APY=1 pool (8.2% WBNB/USDT rank 7 in UI not visible above fold, missed due to pagination)
+SCREENSHOTS=task1-without-01.png (Pancake Pools page), task1-without-02.png (BscScan pool details)
+HAR=task1-without.har
+NOTES=Manual scan required opening 5 pool detail pages + calculating APY from APR. Agent scanned 24 pools via API in 12s.

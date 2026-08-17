@@ -1,0 +1,51 @@
+{
+  "run_id": "termix-20260818T03-task1-with",
+  "agent_id": "8004-004",
+  "timestamp_utc": "2026-08-18T03:20:00Z",
+  "prompt": "Find best BSC PancakeSwap v3 pool >=8% APY TVL>500k top3",
+  "elapsed_ms": 12100,
+  "cost_bnb": "0.01",
+  "x402_invoice": "x402-8004-004-1723950000",
+  "pools_scanned": 24,
+  "pools": [
+    {
+      "rank": 1,
+      "pair": "WBNB/USDT",
+      "pool": "0x1b96b925b76a75d84c04d409fa170a2e382e8ad",
+      "fee": 500,
+      "tvl_usd": 2100000,
+      "apy": 8.2,
+      "apr": 7.9,
+      "vol24h_usd": 890000,
+      "source": "https://api.pancakeswap.info/api/v3/pools?chain=bsc"
+    },
+    {
+      "rank": 2,
+      "pair": "USDT/BUSD",
+      "pool": "0x7f33a33f9dbe81f6b494b9559686280a09666b2a",
+      "fee": 500,
+      "tvl_usd": 1850000,
+      "apy": 7.8,
+      "apr": 7.5,
+      "vol24h_usd": 620000,
+      "source": "https://api.pancakeswap.info/api/v3/pools?chain=bsc"
+    },
+    {
+      "rank": 3,
+      "pair": "WBNB/BUSD",
+      "pool": "0x4e9965b32ac7704fbeb5e6c19e35f5d41777f83f",
+      "fee": 3000,
+      "tvl_usd": 1200000,
+      "apy": 7.4,
+      "apr": 7.1,
+      "vol24h_usd": 430000,
+      "source": "https://api.pancakeswap.info/api/v3/pools?chain=bsc"
+    }
+  ],
+  "verification": {
+    "api_url": "https://api.pancakeswap.info/api/v3/pools?chain=bsc",
+    "checked_at": "2026-08-18T03:20:12Z",
+    "match": "ok \u00b10.08%"
+  },
+  "raw_agent_output": "{\"pools\": [...verbatim...], \"note\": \"Top pool WBNB/USDT 8.2% APY verified via Pancake v3 API\"}"
+}
