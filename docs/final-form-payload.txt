@@ -1,0 +1,7 @@
+Live demo: https://agentera-kappa.vercel.app
+TermiX report: https://agentera-kappa.vercel.app/termix
+GitHub: https://github.com/Lutviansyah/AgentEra (a18a745 + polish — 7 routes, pnpm build ✓)
+Wallet (Altana track, BSC Testnet 97): 0xfc208aDc18034668c3A2bacf5532e2403212db89
+Explorer account: https://testnet.altana.network/account/0xfc208aDc18034668c3A2bacf5532e2403212db89
+Key (pancakeTrading): https://testnet.altana.network/key/0x49255b030b3f4ffe29ed3df6ab08b06d42ee390d89468d77aec2b4e339479177 — grant tx https://testnet.bscscan.com/tx/0x59ff5f9387ae012c7358c19e2c63cf65a31620d9910ce3232e5de892165f3124 — revoke tx https://testnet.bscscan.com/tx/0x7f0caa061ce34ec7880ca3f576d3e0599a12bcf9593179e27262636c7e4991c1 (Revoked ✓ visible in product)
+Stack: Next.js 14 + 8004scan (Monitoring / Grid Trading / Health Factor / Yield) + Binance x402 + Altana sessions (spend cap 10 USDT/day, expiry 1h, revocable onchain). Find → Compare → Hire in 3 clicks. Tracks: PancakeSwap 1k CAKE + TermiX $10k (40.6×/163×/604×, 6 evidence JSON) + Altana 50k XP.

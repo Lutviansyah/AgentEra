@@ -168,4 +168,7 @@ open https://testnet.altana.network/key/0xKEY_FROM_STEP3
 Tested: `npx tsc --noEmit --target ES2020` passes, deps installed (`@altananetwork/sdk 0.7.1 + viem 2.55.17`). Not yet executed on testnet — requires funding Step 1 above and a live run of Steps 2-5 (estimated 5 min once faucet arrives).
 
 
-**Submitter wallet for Altana track:** `0x34C002E40fD499156340c385f3D1f19011b29942` (include in Google Form Additional Notes + ensure linked to explorer URLs after session grant)
+**Submitter wallet for Altana track:** `0xfc208aDc18034668c3A2bacf5532e2403212db89` (BNB Testnet 97 — burner basedao wallet1, PK in Vercel env ALTANA_PRIVATE_KEY, funded 0.05 tBNB, 3 grants + 1 revoke CONFIRMED)
+- Account: https://testnet.altana.network/account/0xfc208aDc18034668c3A2bacf5532e2403212db89
+- Keys: 0x78fd59…282f / 0x4925…9177 / 0x4b2385…428d — txs 0x741d…5bc / 0x59ff…3124 / 0xe598…16c2b — revoke 0x7f0c…91c1 CONFIRMED
+- Legacy note: initial draft listed `0x34C0…9942` (user main wallet) — replaced, main wallet untouched (include in Google Form Additional Notes + ensure linked to explorer URLs after session grant)
