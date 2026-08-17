@@ -21,12 +21,12 @@ export async function POST(req: NextRequest) {
 
     // Never leak signer private key — return only public verifier fields
     const { publicKey: _pk, expiry: _exp, permissions: _perms, walletAddress: _wa } = grant.session as any
-    const safeSession = {
+    const safeSession = JSON.parse(JSON.stringify({
       publicKey: grant.publicKey,
       expiry: Number(grant.session.expiry),
       permissions: grant.session.permissions,
       walletAddress: grant.walletAddress,
-    }
+    }, (_, v) => typeof v === 'bigint' ? v.toString() : v))
     return NextResponse.json({
       ok: true,
       walletAddress: grant.walletAddress,
