@@ -15,8 +15,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'ALTANA_PRIVATE_KEY missing' }, { status: 500 })
     }
     const wallet = await getOrCreateAgentWallet()
+    // Rehydrate stringified BigInt expiry from safeSession (client only sends safeSession, not full SDK Session)
+    let normalizedSession: any = session
+    if (session && typeof session.expiry === 'string') {
+      normalizedSession = { ...session, expiry: BigInt(session.expiry) }
+    }
     // Prefer session object or publicKey (33/64/65 bytes). keyId (32-byte keccak) is NOT valid for revokeSession.
-    const target: any = session || publicKey || keyId
+    const target: any = normalizedSession || publicKey || keyId
     if (keyId && !publicKey && !session) {
       return NextResponse.json({ ok: false, error: 'keyId (32 bytes) cannot be revoked directly — send publicKey (from grant response) or full session object. Example: { publicKey: "0x..." }' }, { status: 400 })
     }

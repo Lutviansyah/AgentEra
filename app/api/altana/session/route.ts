@@ -19,12 +19,20 @@ export async function POST(req: NextRequest) {
     const grant = await grantHireSession({ presetId, ttlSec, spendUsdt })
     const links = verifierLinksForGrant(grant)
 
+    // Never leak signer private key — return only public verifier fields
+    const { publicKey: _pk, expiry: _exp, permissions: _perms, walletAddress: _wa } = grant.session as any
+    const safeSession = {
+      publicKey: grant.publicKey,
+      expiry: Number(grant.session.expiry),
+      permissions: grant.session.permissions,
+      walletAddress: grant.walletAddress,
+    }
     return NextResponse.json({
       ok: true,
       walletAddress: grant.walletAddress,
       keyId: grant.keyId,
       publicKey: grant.publicKey,
-      session: JSON.parse(JSON.stringify(grant.session, (_, v) => typeof v === 'bigint' ? v.toString() : v)),
+      session: safeSession,
       network: grant.network,
       expiry: Number(grant.session.expiry),
       transactionHash: grant.transactionHash,
